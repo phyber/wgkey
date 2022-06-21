@@ -37,8 +37,6 @@ pub fn pubkey() -> Result<String> {
 
     let public_key = generate_public_key(&buffer)?;
 
-    println!("{}", public_key);
-
     Ok(public_key)
 }
 

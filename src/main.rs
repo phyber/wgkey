@@ -16,10 +16,14 @@ fn main() -> Result<()> {
 
     match args.subcommand() {
         Some(("genkey", _matches)) => {
-            genkey(WG_KEY_LEN)?;
+            let private_key = genkey(WG_KEY_LEN)?;
+
+            println!("{}", private_key);
         },
         Some(("pubkey", _matches)) => {
-            pubkey()?;
+            let public_key = pubkey()?;
+
+            println!("{}", public_key);
         },
         _ => unreachable!(),
     }

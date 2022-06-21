@@ -35,7 +35,5 @@ pub fn genkey(len: usize) -> Result<String> {
 
     let encoded = Base64::encode_string(&bytes);
 
-    println!("{}", encoded);
-
     Ok(encoded)
 }
