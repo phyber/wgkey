@@ -20,6 +20,11 @@ fn main() -> Result<()> {
 
             println!("{}", private_key);
         },
+        Some(("genpsk", _matches)) => {
+            let psk = genkey(WG_KEY_LEN)?;
+
+            println!("{}", psk);
+        },
         Some(("pubkey", _matches)) => {
             let public_key = pubkey()?;
 

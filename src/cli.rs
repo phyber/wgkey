@@ -17,11 +17,15 @@ fn create_app<'a>() -> Command<'a> {
     let genkey = Command::new("genkey")
         .about("Generates a new private key and writes it to stdout");
 
+    let genpsk = Command::new("genpsk")
+        .about("Generates a new preshared key and writes it to stdout");
+
     let pubkey = Command::new("pubkey")
         .about("Reads a private key from stdin and writes a public key to stdout");
 
     app
         .subcommand(genkey)
+        .subcommand(genpsk)
         .subcommand(pubkey)
 }
 
